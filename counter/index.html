@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100">
+      <div class="bg-white rounded-2xl shadow-2xl shadow-black/10 p-10 max-w-md w-full mx-4 border border-gray-100">
+        <h1 class="text-5xl font-extrabold text-center mb-6">Counter</h1>
+        <p id="counterValue" class="text-6xl font-extrabold text-center mb-8">0</p>
+        <div class="flex justify-center gap-3">
+          <button onclick="onDecrement()" class="bg-black text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg active:scale-95">DECREASE</button>
+          <button onclick="onReset()" class="bg-black text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg active:scale-95">RESET</button>
+          <button onclick="onIncrement()" class="bg-black text-white px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg active:scale-95">INCREASE</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
