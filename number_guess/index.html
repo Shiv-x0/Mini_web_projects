@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <!-- Tailwind CSS CDN (Required for styling, contains no game logic) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen flex items-center justify-center p-4 font-sans">
+
+    <!-- Main Game Container -->
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="bg-indigo-600 px-8 py-6 text-center">
+            <h1 class="text-3xl font-extrabold text-white tracking-tight">Guess the Number</h1>
+            <p class="text-indigo-200 mt-1 text-sm font-medium">Test your luck and intuition</p>
+        </div>
+
+        <!-- Game Body -->
+        <div class="px-8 py-8 space-y-6">
+            
+            <!-- Instructions -->
+            <p class="text-center text-gray-500 text-sm">
+                I'm thinking of a number between 
+                <span class="font-bold text-gray-800">1</span> and 
+                <span class="font-bold text-gray-800">100</span>. Can you guess it?
+            </p>
+
+            <!-- Input and Submit Button -->
+            <div class="flex space-x-3">
+                <input 
+                    type="number" 
+                    placeholder="Enter your guess..." 
+                    class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 transition-colors text-gray-700 font-semibold text-center text-lg"
+                    min="1" 
+                    max="100"
+                >
+                <button class="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-indigo-200 transition-all">
+                    Guess
+                </button>
+            </div>
+
+            <!-- Feedback / Hint Area -->
+            <div class="bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl p-6 text-center min-h-[80px] flex flex-col items-center justify-center">
+                <p class="text-gray-400 text-base">Your hint will appear here...</p>
+                <!-- Example of what it could look like when active (commented out):
+                <p class="text-2xl font-bold text-red-500">Too High! 📈</p>
+                -->
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-slate-50 rounded-xl p-4 text-center">
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Attempts</p>
+                    <p class="text-2xl font-extrabold text-gray-800 mt-1">0</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center">
+                    <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Last Guess</p>
+                    <p class="text-2xl font-extrabold text-gray-300 mt-1">--</p>
+                </div>
+            </div>
+
+            <!-- Reset / New Game Button -->
+            <button class="w-full py-3 border-2 border-gray-200 text-gray-500 rounded-xl hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 transition-colors font-semibold" onclick="reset()">
+                Reset Game
+            </button>
+
+        </div>
+    </div>
+
+</body>
+</html>
